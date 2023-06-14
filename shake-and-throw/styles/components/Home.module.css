@@ -1,7 +1,11 @@
+@charset "utf-8";
+
 .clickButton {
   background-color: rgb(60, 197, 231);
   color: rgba(255, 255, 255, 0);
   padding: 0.8rem;
   border-radius: 0.4rem;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
 }
