@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       </div>
       <div>
         <Link href="/game">
-          <p>スタート</p>
+          <p>エンド</p>
         </Link>
         <Link href="/ranking">
           <p>ランキング</p>
