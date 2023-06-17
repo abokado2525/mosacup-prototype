@@ -1,0 +1,34 @@
+.box {
+    border: 3px solid black;
+    padding: 25px;
+    background-color: aqua;
+    height: 500px;
+    width: 70%;
+    margin: auto;
+}
+
+.result_box {
+    text-align: center;
+    border: 2px solid black;
+    
+}
+
+.result_font {
+    text-align: center;
+
+}
+.font1 {
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+.font2 {
+    font-size: 30px;
+}
+
+.back {
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 200px;
+}

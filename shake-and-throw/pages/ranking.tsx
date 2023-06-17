@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // pages/about.js
-function About() {
+function Ranking() {
   return (
     <div>
       <p>ランキング画面</p>
@@ -14,4 +14,4 @@ function About() {
   );
 }
 
-export default About;
+export default Ranking;
