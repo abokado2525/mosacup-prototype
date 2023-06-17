@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import React, { useEffect, useRef } from "react";
 
 // pages/about.js
-const VideoPlayer = () => {
+function About() {
   return (
     <div>
       <p>game画面</p>
@@ -21,4 +21,4 @@ const VideoPlayer = () => {
   );
 };
 
-export default VideoPlayer;
+export default About;
