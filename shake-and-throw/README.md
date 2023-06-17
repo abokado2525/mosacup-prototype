@@ -2,7 +2,13 @@
 
 ## clone 手順
 
-clone → clone したフォルダーに移動してから yarn install
+git clone https://github.com/abokado2525/hogehoge.git
+
+cd shake-and-throw
+
+yarn install
+
+の順で実行してください
 
 そしたら yarn dev で動くようになるよ！
 
