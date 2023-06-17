@@ -1,0 +1,37 @@
+.title {
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.table {
+    display: table;
+    margin: auto;
+}
+
+.box {
+    border: 3px solid black;
+    padding: 25px;
+    background-color: aqua;
+    height: 500px;
+    width: 70%;
+    margin: auto;
+}
+
+.back {
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 150px;
+    margin-top: 50px;
+}
+
+.cell {
+    display: table;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+.cell td {
+    padding: 0px 5px;
+    font-size: 20px;
+}
