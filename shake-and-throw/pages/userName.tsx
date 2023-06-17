@@ -12,6 +12,8 @@ const App = () => {
     setText("");
   }
 
+  const [flag, setflag] = useState(false);
+
   return (
     <div className="App">
       <input
@@ -20,8 +22,10 @@ const App = () => {
       />
 
       {/* ↓buttonを追加 */}
-      <button onClick={onClickAddText}>追加</button>
-
+      <div>
+        <button onClick={onClickAddText}>追加</button>
+      </div>
+      
       {/* ↓pタグを追加 */}
       <p>ユーザ名：{addText}</p>
     </div>
