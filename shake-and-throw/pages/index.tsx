@@ -75,6 +75,7 @@ function Modal({show, setShow}: Props) {
         <Link href="/game">
         <button onClick={() => setShow(false)}>ゲーム開始！</button>
         </Link>
+        <button onClick={() => setShow(false)}>戻る</button>
       </div>
     </div>
     );
