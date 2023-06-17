@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import { getWindowSize } from "../hooks/GetWindowSize";
-import styles from "../styles/components/Home.module.css";
+import  styles from  "../styles/components/Home.module.css";
 import Link from "next/link";
+import React, { useState } from "react";
 
 //? DeviceMotionEvent: 加速度を取得する
 //! FirefoxとChromeで動作が異なる
@@ -12,10 +13,7 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   const { height, width } = getWindowSize();
-
-  const handleClick = () => {
-    // 画面遷移の処理
-  };
+  const [show, setShow] = useState(false);
   // TODO chat-GPTに下の書き方聞いたので、実装してみる
   /*
   window.addEventListener("devicemotion", (event) => {
@@ -24,20 +22,24 @@ const Home: NextPage = () => {
   */
 
   return (
-    <div>
-      <div>
-        {/* ↓は画面サイズを取得して表示してるだけ。必要ならこの変数でボタンサイズの設定とかするといいかもね */}
-        height:{height} width:{width}
-      </div>
-      <div>
+    <div className={styles.Home}>
+            <h1 className={styles.title}>タイトル</h1>
+      <div className={styles.buttons}>
         <Link href="/game">
-          <p>エンド</p>
+        <button className={styles.start} type="button">スタート</button>
         </Link>
+        {/* 画像アップロード */}
+        <div>
+          <button onClick={() => setShow(true)}>Click</button>
+          <Modal show={show} setShow={setShow} />
+        </div>
+        
+
         <Link href="/ranking">
-          <p>ランキング</p>
+        <button className={styles.ranking} type='button'>ランキング</button>
         </Link>
         <Link href="/how_to_playing_game">
-          <p>遊び方</p>
+        <button className={styles.rule}>遊び方</button>
         </Link>
       </div>
     </div>
@@ -45,3 +47,24 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+interface Props {
+  show: boolean
+  setShow:  React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function Modal({show, setShow}: Props) {
+  if(show) {
+    return (
+    <div className={styles.overlay}>
+      <div className={styles.content}>
+        <p>これがモーダルウィンドウです。</p>
+        <p>
+          <button onClick={() => setShow(false)}>close</button>
+        </p>
+      </div>
+    </div>
+    );
+  }
+  else{  return null; }
+}

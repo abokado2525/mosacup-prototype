@@ -11,6 +11,7 @@ function About() {
           <p>back to home</p>
         </Link>
       </div>
+      
       {/* //TODO 動画埋め込みできてない */}
       <ReactPlayer
         url="/video/haikei.mp4"
