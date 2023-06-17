@@ -47,8 +47,8 @@ const Home: NextPage = () => {
         <Link href="/ranking">
         <button className={styles.ranking} type='button'>ランキング</button>
         </Link>
-        <Link href="/how_to_playing_game">
-        <button className={styles.rule}>遊び方</button>
+        <Link href="how_to_playing_game">
+        <button className={styles.rule} type='button'>遊び方</button>
         </Link>
       </div>
     </div>
@@ -81,5 +81,4 @@ function Modal({show, setShow}: Props) {
   }
   else{  return null; }
 }
-
 
