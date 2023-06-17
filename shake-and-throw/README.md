@@ -2,7 +2,7 @@
 
 ## clone 手順
 
-git clone https://github.com/abokado2525/hogehoge.git
+git clone https://github.com/abokado2525/mosacup-prototype.git
 
 cd shake-and-throw
 
