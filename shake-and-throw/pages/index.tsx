@@ -3,6 +3,8 @@ import { getWindowSize } from "../hooks/GetWindowSize";
 import  styles from  "../styles/components/Home.module.css";
 import Link from "next/link";
 import React, { useState } from "react";
+import UserName from "./userName";
+import FlileUp from "./fileUp";
 
 //? DeviceMotionEvent: 加速度を取得する
 //! FirefoxとChromeで動作が異なる
@@ -14,6 +16,16 @@ import React, { useState } from "react";
 const Home: NextPage = () => {
   const { height, width } = getWindowSize();
   const [show, setShow] = useState(false);
+  const [text, setText] = useState("");
+
+  /* ↓state変数「addText」を定義 */
+  const [addText, setAddText] = useState("");
+
+  /* ↓関数onClickAddTextを定義 */
+  const onClickAddText = () => {
+    setAddText(text);
+    setText("");
+  }
   // TODO chat-GPTに下の書き方聞いたので、実装してみる
   /*
   window.addEventListener("devicemotion", (event) => {
@@ -25,14 +37,20 @@ const Home: NextPage = () => {
     <div className={styles.Home}>
             <h1 className={styles.title}>タイトル</h1>
       <div className={styles.buttons}>
-        <Link href="/game">
+        {/* <Link href="/game">
         <button className={styles.start} type="button">スタート</button>
-        </Link>
+        </Link> */}
         {/* 画像アップロード */}
+        <div>
+          <button className={styles.start} type="button" onClick={() => setShow(true)}>スタート</button>
+          <Modal show={show} setShow={setShow} />
+        </div>
+        
+        {/* ポップアップのテンプレート
         <div>
           <button onClick={() => setShow(true)}>Click</button>
           <Modal show={show} setShow={setShow} />
-        </div>
+        </div> */}
         
 
         <Link href="/ranking">
@@ -58,9 +76,14 @@ function Modal({show, setShow}: Props) {
     return (
     <div className={styles.overlay}>
       <div className={styles.content}>
-        <p>これがモーダルウィンドウです。</p>
+        <p>ユーザー名を入力してください</p>
+          <UserName />
+        <p>画像を選択してください</p>
+          <FlileUp />
         <p>
+          <Link href="/game">
           <button onClick={() => setShow(false)}>close</button>
+          </Link>          
         </p>
       </div>
     </div>
@@ -68,3 +91,5 @@ function Modal({show, setShow}: Props) {
   }
   else{  return null; }
 }
+
+
