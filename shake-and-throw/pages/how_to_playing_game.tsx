@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // pages/about.js
-function About() {
+function Rule() {
   return (
     <div>
       <p>遊び方説明</p>
@@ -14,4 +14,4 @@ function About() {
   );
 }
 
-export default About;
+export default Rule;
