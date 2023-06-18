@@ -23,14 +23,16 @@ const MyComponent = () => {
   // 速度の符号が変わったタイミングを１回振ったとする
   let count = 0;
 
+  let rotation_alpha = 0; //alpha軸の端末の速度取得する変数
+
   const startListening = () => {
     setIsListening(true);
     eventListener = (event: DeviceMotionEvent) => {
-      const rotation_alpha = event.rotationRate.alpha; //alpha軸の端末の速度取得
+      rotation_alpha = event.rotationRate.alpha;
       console.log(rotation_alpha);
       // 取得したalpha軸の速度を配列rotationRateDataに追加
       setRotationRateData([...rotationRateData, rotation_alpha]);
-      /* //! 一旦取得したすべての配列の値を出力してから、どこに問題があるか考える。
+      /* //! 計測が終わる瞬間しか値を配列に格納できてない
       // 速度の符号が変わったタイミングを１回振ったとする
       if (
         rotationRateData[rotationRateData.length - 1] *
@@ -77,14 +79,7 @@ const MyComponent = () => {
       <button onClick={startListening} disabled={isListening}>
         速度計測
       </button>
-      {/*
-      <p>配列の要素数は{rotationRateData.length}</p>
-      <ul>
-        {rotationRateData.map((element) => (
-          <li key={element}>{element}</li>
-        ))}
-      </ul>
-      */}
+      <p>現在の速度: {rotation_alpha}</p>
       <div>
         {isListening ? (
           <p>計測中</p>

@@ -86,7 +86,7 @@ function Modal({ show, setShow }: Props) {
           <p>画像を選択してください</p>
           <FileUp />
 
-          <Link href="/game">
+          <Link href="/charge">
             <button onClick={() => setShow(false)}>ゲーム開始！</button>
           </Link>
         </div>
