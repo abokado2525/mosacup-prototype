@@ -71,7 +71,7 @@ function Modal({show, setShow}: Props) {
         <p>ユーザー名を入力してください</p>
           <UserName />
         <p>画像を選択してください</p>
-          <FileUp />
+        <FileUp />
 
         <Link href="/game">
         <button onClick={() => setShow(false)}>ゲーム開始！</button>
