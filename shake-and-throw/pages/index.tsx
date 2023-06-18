@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.home}>
-            <h1 className={styles.title}>タイトル</h1>
+            <img src="/image/logo.png" className={styles.title}></img>
       <div className={styles.button}>
         {/* <Link href="/game">
         <button className={styles.start} type="button">スタート</button>

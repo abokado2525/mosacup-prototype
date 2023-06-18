@@ -6,9 +6,11 @@
     background-size: cover;
 }   
 .title {
-    font-size: 300%;
-    text-align: center;
-    padding-top: 100px;
+    display: block;
+    margin: auto;
+    transform: translate(0px, 80px);
+    width: 280px;
+    height: auto;
   }
 .button {
     display: flex;
