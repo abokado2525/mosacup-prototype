@@ -50,6 +50,10 @@ const Home: NextPage = () => {
           <Modal show={show} setShow={setShow} />
         </div> */}
 
+        {/* //! 消す */}
+        <Link href="/acculate">振った回数</Link>
+        {/* //! 消す */}
+
         <div className={styles.buttons}>
           <a href="/ranking" className={styles.btn_06}>
             ランキング
@@ -83,13 +87,8 @@ function Modal({ show, setShow }: Props) {
           <button onClick={() => setShow(false)}>戻る</button>
           <p>ユーザー名を入力してください</p>
           <UserName />
-<<<<<<< HEAD
           <p>画像を選択してください</p>
           <FileUp />
-=======
-        <p>画像を選択してください</p>
-        <FileUp />
->>>>>>> main
 
           <Link href="/game">
             <button onClick={() => setShow(false)}>ゲーム開始！</button>

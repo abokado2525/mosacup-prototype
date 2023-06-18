@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+// acculate.tsxなのに加速度でなく角速度を取得してるのおもろ。
 // chat-GPT参考
 // 参考リンク：https://www.slideshare.net/i_Pride/javascript-155758139
 
@@ -19,13 +20,26 @@ const MyComponent = () => {
   // タイマーを定義
   let timeout: NodeJS.Timeout | undefined;
 
+  // 速度の符号が変わったタイミングを１回振ったとする
+  let count = 0;
+
   const startListening = () => {
     setIsListening(true);
     eventListener = (event: DeviceMotionEvent) => {
       const rotation_alpha = event.rotationRate.alpha; //alpha軸の端末の速度取得
-      // console.log(rotation_alpha);
+      console.log(rotation_alpha);
       // 取得したalpha軸の速度を配列rotationRateDataに追加
       setRotationRateData([...rotationRateData, rotation_alpha]);
+      /* //! 一旦取得したすべての配列の値を出力してから、どこに問題があるか考える。
+      // 速度の符号が変わったタイミングを１回振ったとする
+      if (
+        rotationRateData[rotationRateData.length - 1] *
+          rotationRateData[rotationRateData.length - 2] <
+        0
+      ) {
+        count += 1;
+      }
+*/
     };
     // addEventListener() は EventTarget インターフェイスのメソッドで、
     // ターゲットに特定のイベントが配信されるたびに呼び出される関数を設定します。
@@ -63,12 +77,26 @@ const MyComponent = () => {
       <button onClick={startListening} disabled={isListening}>
         速度計測
       </button>
+      {/*
       <p>配列の要素数は{rotationRateData.length}</p>
       <ul>
         {rotationRateData.map((element) => (
           <li key={element}>{element}</li>
         ))}
       </ul>
+      */}
+      <div>
+        {isListening ? (
+          <p>計測中</p>
+        ) : (
+          <ul>
+            <p>配列の要素数は: {rotationRateData.length}</p>
+            {rotationRateData.map((element) => (
+              <li key={element}>{element}</li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 };
