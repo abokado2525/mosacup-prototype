@@ -14,9 +14,13 @@ function FileUp() {
         const reader = new FileReader();
         reader.onloadend = () => {
             setPreviewImage(reader.result);
+            const imageData=reader.result as string;
+            localStorage.setItem('previewImage',imageData);
         };
         reader.readAsDataURL(file);
+
     };
+    console.log(previewImage)
 
     return (
         <div>
