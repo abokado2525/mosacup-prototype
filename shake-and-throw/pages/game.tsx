@@ -17,7 +17,9 @@ function About() {
         <source src="/video/TateHaikei.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <FryFile />
+      <div className={styles.picture}>
+        <FryFile />
+      </div>      
     </div>
   );
 };
