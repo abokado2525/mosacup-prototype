@@ -33,6 +33,10 @@ const Home: NextPage = () => {
         </Link> */}
         {/* 画像アップロード */}
         <div>
+          {/* //! 後で消す */}
+          <Link href="/acculate">速度</Link>
+          <Link href="/hairetu">配列</Link>
+          {/* //! 後で消す */}
           <button
             className={styles.start}
             type="button"
@@ -76,6 +80,7 @@ function Modal({ show, setShow }: Props) {
     return (
       <div className={styles.overlay}>
         <div className={styles.content}>
+          <button onClick={() => setShow(false)}>戻る</button>
           <p>ユーザー名を入力してください</p>
           <UserName />
           <p>画像を選択してください</p>
