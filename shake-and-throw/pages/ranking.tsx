@@ -6,7 +6,7 @@ function Ranking() {
   return (
     <div className={styled.box}>
       <p className={styled.title}>ランキング</p>
-      <div className={styled.table}>
+      <table className={styled.table}>
         <tr className={styled.cell}>
           <td>1位</td>
           <td>あああ</td>
@@ -22,7 +22,7 @@ function Ranking() {
           <td>あああ</td>
           <td>000</td>
         </tr>
-      </div>
+      </table>
         <Link href="/#">
           <button className={styled.back}>ホームへ戻る</button>
         </Link>
