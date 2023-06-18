@@ -25,15 +25,16 @@ const Home: NextPage = () => {
   */
 
   return (
-    <div className={styles.Home}>
+    <div className={styles.home}>
             <h1 className={styles.title}>タイトル</h1>
-      <div className={styles.buttons}>
+      <div className={styles.button}>
         {/* <Link href="/game">
         <button className={styles.start} type="button">スタート</button>
         </Link> */}
         {/* 画像アップロード */}
-        <div>
-          <button className={styles.start} type="button" onClick={() => setShow(true)}>スタート</button>
+        <div className={styles.buttons}>
+          {/*<button className={styles.start} type="button" onClick={() => setShow(true)}>スタート</button>*/}
+          <a href="javascript:void(0)" className={styles.btn_06} onClick={() => setShow(true)}>スタート</a>
           <Modal show={show} setShow={setShow} />
         </div>
         
@@ -43,13 +44,15 @@ const Home: NextPage = () => {
           <Modal show={show} setShow={setShow} />
         </div> */}
         
-
-        <Link href="/ranking">
-        <button className={styles.ranking} type='button'>ランキング</button>
-        </Link>
-        <Link href="/how_to_playing_game">
+        <div className={styles.buttons}>
+        <a href="/ranking" className={styles.btn_06}>ランキング</a>
+        </div>
+        <div className={styles.buttons}>
+        <a href="/how_to_playing_game" className={styles.btn_06}>遊び方</a>
+        </div>
+        {/*<Link href="/how_to_playing_game">
         <button className={styles.rule} type='button'>遊び方</button>
-        </Link>
+      </Link>*/}
       </div>
     </div>
   );
