@@ -50,10 +50,6 @@ const Home: NextPage = () => {
           <Modal show={show} setShow={setShow} />
         </div> */}
 
-        {/* //! 消す */}
-        <Link href="/acculate">振った回数</Link>
-        {/* //! 消す */}
-
         <div className={styles.buttons}>
           <a href="/ranking" className={styles.btn_06}>
             ランキング
