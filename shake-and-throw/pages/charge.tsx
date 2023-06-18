@@ -9,6 +9,7 @@ const MyComponent: React.FC = () => {
   const [count, setCount] = useState<number>(0);
   const [previousValue, setPreviousValue] = useState<number | null>(null);
   const [isFlagSet, setIsFlagSet] = useState<boolean>(false);
+  let n: number = 100; // 速度変化の閾値
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
@@ -33,7 +34,7 @@ const MyComponent: React.FC = () => {
     const handleDeviceMotion = (event: DeviceMotionEvent) => {
       const alpha: number = event.rotationRate.alpha;
       setRotationAlpha(alpha);
-      if (previousValue !== null && Math.abs(alpha - previousValue) >= 100) {
+      if (previousValue !== null && Math.abs(alpha - previousValue) >= n) {
         setCount((prevCount) => prevCount + 1);
       }
       setPreviousValue(alpha);
@@ -46,6 +47,8 @@ const MyComponent: React.FC = () => {
     };
   }, []);
 
+  let counter = (count / 10).toFixed(0);
+
   return (
     <div>
       <div>
@@ -55,7 +58,9 @@ const MyComponent: React.FC = () => {
         Rotation Alpha:{" "}
         {rotationAlpha !== null ? rotationAlpha.toFixed(2) : "-"}
       </p>
-      <p>Count: {(count / 10).toFixed(0)}</p>
+      <div>
+        <p className={styles.count}>{counter}</p>
+      </div>
       <div className={styles.buttons}>
         <a href="/game" className={styles.btn_06}>
           シュート！
