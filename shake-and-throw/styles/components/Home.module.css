@@ -86,3 +86,32 @@ a.btn_06:hover {
 .buttons {
     padding: 10px;
 }
+
+.picture {
+  width: 80%;
+  height: 0;
+  position: absolute;
+  top: 1200px;
+  bottom: 0;
+  left: 270px;
+  right: 0;
+  animation: fry 16s linear  1 normal;
+  animation-delay: 3s;
+
+  /* レイヤー背景の上に乗せる */
+  z-index: 3;
+  margin: auto;
+  text-align: center;
+}
+
+@keyframes fry {
+  0%{
+    transform: translate(0,0);
+  }
+  40%{
+    transform: translate(500px,-1000px);
+  }
+  75%{
+    transform: translateY(200px,0);
+  }
+}
